@@ -63,7 +63,7 @@ Pod::Spec.new do |s|
   #
 
   # s.platform     = :ios
-  # s.platform     = :ios, "5.0"
+  s.platform     = :ios, "8.0"
 
   #  When using multiple platforms
   # s.ios.deployment_target = "5.0"
@@ -81,17 +81,14 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/chenzuying54438/CZBaseModule.git", :tag => "#{s.version}" }
 
 
-  # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  CocoaPods is smart about how it includes source code. For source files
-  #  giving a folder will include any swift, h, m, mm, c & cpp files.
-  #  For header files it will include any header in the folder.
-  #  Not including the public_header_files will make all headers public.
-  #
+  s.default_subspec = 'CZBaseModule'
 
-  s.source_files  = "**/*.{h,m}"
-  s.exclude_files = "Classes/Exclude"
+  s.subspec 'CZBaseModule' do |d|
 
+    d.source_files  = "**/*.{h,m}"
+    d.exclude_files = "Classes/Exclude"
+
+  end
   # s.public_header_files = "Classes/**/*.h"
 
 
